@@ -6,8 +6,8 @@ import android.view.Window;
 import android.widget.ListView;
 
 import com.example.dell.toyrentalapp.R;
-import com.example.dell.toyrentalapp.adapter.ShoppingCtAdapter;
-import com.example.dell.toyrentalapp.bassclass.FriendSCt;
+import com.example.dell.toyrentalapp.adapter.ListAdapter;
+import com.example.dell.toyrentalapp.bassclass.FriendList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +17,8 @@ import java.util.List;
  */
 
 public class ListActivity extends Activity {
-    public List<FriendSCt>friends=new ArrayList<FriendSCt>();
-    private ShoppingCtAdapter myadapter;
+    public List<FriendList>friends=new ArrayList<FriendList>();
+    private ListAdapter myadapter;
     private ListView lsit_l;
     @Override
     protected void onCreate( Bundle savedInstanceState) {
@@ -31,13 +31,13 @@ public class ListActivity extends Activity {
     }
 
     private void listview() {
-        myadapter=new ShoppingCtAdapter(friends,this);
+        myadapter=new ListAdapter(friends,this);
         lsit_l.setAdapter(myadapter);
     }
 
     private void getdata() {
-        friends.add(new FriendSCt(R.drawable.a1,"abc..."));
-        friends.add(new FriendSCt(R.drawable.boy,"bcd..."));
+        friends.add(new FriendList(R.drawable.a1,"abc..."));
+        friends.add(new FriendList(R.drawable.boy,"bcd..."));
     }
 
     private void findId() {
