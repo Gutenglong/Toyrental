@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:gravity="center"
+        android:background="#09c9f9"
+        android:text="列表"
+        android:textSize="30sp"
+        />
     <ListView
-        android:id="@+id/list_l"
+        android:id="@+id/list_l2"
+        android:paddingLeft="30dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </ListView>
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

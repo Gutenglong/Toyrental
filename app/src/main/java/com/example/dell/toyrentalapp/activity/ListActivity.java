@@ -2,11 +2,13 @@ package com.example.dell.toyrentalapp.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import android.view.Window;
 import android.widget.ListView;
+
 import com.example.dell.toyrentalapp.R;
 import com.example.dell.toyrentalapp.adapter.ShoppingCtAdapter;
 import com.example.dell.toyrentalapp.bassclass.FriendSCt;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,18 +21,14 @@ public class ListActivity extends Activity {
     private ShoppingCtAdapter myadapter;
     private ListView lsit_l;
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_list);
         findId();
         getdata();
         listview();
-        test();
     }
-
-    private void test() {
-    }
-
 
     private void listview() {
         myadapter=new ShoppingCtAdapter(friends,this);
@@ -43,6 +41,6 @@ public class ListActivity extends Activity {
     }
 
     private void findId() {
-        lsit_l=(ListView)findViewById(R.id.list_l);
+        lsit_l=(ListView)findViewById(R.id.list_l2);
     }
 }

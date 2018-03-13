@@ -1,36 +1,21 @@
-//package com.example.dell.toyrentalapp.activity;
+package com.example.dell.toyrentalapp.activity;
+
+import android.support.v7.app.AppCompatActivity;
+
+//import com.example.nianchen.normaluniversitytourgroup.page_activity.RegistActivity;
+//import com.hyphenate.EMCallBack;
+//import com.hyphenate.EMContactListener;
+//import com.hyphenate.EMError;
+//import com.hyphenate.chat.EMClient;
+//import com.loopj.android.http.AsyncHttpClient;
+//import com.loopj.android.http.AsyncHttpResponseHandler;
+//import com.loopj.android.http.JsonHttpResponseHandler;
+//import com.loopj.android.http.RequestParams;
+//import com.loopj.android.http.ResponseHandlerInterface;
 //
-//import android.app.ProgressDialog;
-//import android.content.Intent;
-//import android.content.SharedPreferences;
-//import android.os.Bundle;
-//import android.os.Handler;
-//import android.os.Message;
-//import android.support.v7.app.AppCompatActivity;
-//import android.util.Log;
-//import android.view.View;
-//import android.widget.Button;
-//import android.widget.EditText;
-//import android.widget.Toast;
-//
-//import com.example.dell.toyrentalapp.MainActivity;
-//
-//import org.json.JSONObject;
-//
-////import com.example.nianchen.normaluniversitytourgroup.page_activity.RegistActivity;
-////import com.hyphenate.EMCallBack;
-////import com.hyphenate.EMContactListener;
-////import com.hyphenate.EMError;
-////import com.hyphenate.chat.EMClient;
-////import com.loopj.android.http.AsyncHttpClient;
-////import com.loopj.android.http.AsyncHttpResponseHandler;
-////import com.loopj.android.http.JsonHttpResponseHandler;
-////import com.loopj.android.http.RequestParams;
-////import com.loopj.android.http.ResponseHandlerInterface;
-////
-////import org.apache.http.Header;
-//
-//public class LoginActivity extends AppCompatActivity {
+//import org.apache.http.Header;
+
+public class LoginsActivity extends AppCompatActivity {
 //    private Button Btlogin;
 //    private EditText EtUname;
 //    private EditText EtPwd;
@@ -44,12 +29,12 @@
 //
 //            }
 //            else {
-//                Toast.makeText(LoginActivity.this, "登入失败",Toast.LENGTH_LONG).show();
+//                Toast.makeText(LoginsActivity.this, "登入失败",Toast.LENGTH_LONG).show();
 //            }
 //            if(msg.what==10){
-//                Intent i = new Intent(LoginActivity.this, MainActivity.class);
+//                Intent i = new Intent(LoginsActivity.this, MainActivity.class);
 //                startActivity(i);
-//                LoginActivity.this.finish();
+//                LoginsActivity.this.finish();
 //            }
 //        }
 //    };
@@ -80,7 +65,7 @@
 //        public void onClick(View v) {
 //            switch (v.getId()) {
 //                case R.id.btlogin:
-//                    mDialog = new ProgressDialog(LoginActivity.this);
+//                    mDialog = new ProgressDialog(LoginsActivity.this);
 //                    mDialog.setMessage("正在登陆，请稍后...");
 //                    mDialog.show();
 //                    login();
@@ -92,7 +77,7 @@
 //                    editor.commit();
 //                    break;
 //                case R.id.regist:
-//                    Intent ina=new Intent(LoginActivity.this, RegistActivity.class);
+//                    Intent ina=new Intent(LoginsActivity.this, RegistActivity.class);
 //                    startActivity(ina);
 //                    break;
 //            }
@@ -157,7 +142,7 @@
 //                    }
 //                    @Override
 //                    public void onFailure(int i, Header[] headers, byte[] bytes, Throwable throwable) {
-//                        Toast.makeText(LoginActivity.this,"您的网络有异常",Toast.LENGTH_LONG).show();
+//                        Toast.makeText(LoginsActivity.this,"您的网络有异常",Toast.LENGTH_LONG).show();
 //                    }
 //                }
 //
@@ -197,42 +182,42 @@
 //                        switch (i) {
 //                            // 网络异常 2
 //                            case EMError.NETWORK_ERROR:
-//                                Toast.makeText(LoginActivity.this, "网络错误 code: " + i + ", message:" + s, Toast.LENGTH_LONG).show();
+//                                Toast.makeText(LoginsActivity.this, "网络错误 code: " + i + ", message:" + s, Toast.LENGTH_LONG).show();
 //                                break;
 //                            // 无效的用户名 101
 //                            case EMError.INVALID_USER_NAME:
-//                                Toast.makeText(LoginActivity.this, "无效的用户名 code: " + i + ", message:" + s, Toast.LENGTH_LONG).show();
+//                                Toast.makeText(LoginsActivity.this, "无效的用户名 code: " + i + ", message:" + s, Toast.LENGTH_LONG).show();
 //                                break;
 //                            // 无效的密码 102
 //                            case EMError.INVALID_PASSWORD:
-//                                Toast.makeText(LoginActivity.this, "无效的密码 code: " + i + ", message:" + s, Toast.LENGTH_LONG).show();
+//                                Toast.makeText(LoginsActivity.this, "无效的密码 code: " + i + ", message:" + s, Toast.LENGTH_LONG).show();
 //                                break;
 //                            // 用户认证失败，用户名或密码错误 202
 //                            case EMError.USER_AUTHENTICATION_FAILED:
-//                                Toast.makeText(LoginActivity.this, "用户认证失败，用户名或密码错误 code: " + i + ", message:" + s, Toast.LENGTH_LONG).show();
+//                                Toast.makeText(LoginsActivity.this, "用户认证失败，用户名或密码错误 code: " + i + ", message:" + s, Toast.LENGTH_LONG).show();
 //                                break;
 //                            // 用户不存在 204
 //                            case EMError.USER_NOT_FOUND:
-//                                Toast.makeText(LoginActivity.this, "用户不存在 code: " + i + ", message:" + s, Toast.LENGTH_LONG).show();
+//                                Toast.makeText(LoginsActivity.this, "用户不存在 code: " + i + ", message:" + s, Toast.LENGTH_LONG).show();
 //                                break;
 //                            // 无法访问到服务器 300
 //                            case EMError.SERVER_NOT_REACHABLE:
-//                                Toast.makeText(LoginActivity.this, "无法访问到服务器 code: " + i + ", message:" + s, Toast.LENGTH_LONG).show();
+//                                Toast.makeText(LoginsActivity.this, "无法访问到服务器 code: " + i + ", message:" + s, Toast.LENGTH_LONG).show();
 //                                break;
 //                            // 等待服务器响应超时 301
 //                            case EMError.SERVER_TIMEOUT:
-//                                Toast.makeText(LoginActivity.this, "等待服务器响应超时 code: " + i + ", message:" + s, Toast.LENGTH_LONG).show();
+//                                Toast.makeText(LoginsActivity.this, "等待服务器响应超时 code: " + i + ", message:" + s, Toast.LENGTH_LONG).show();
 //                                break;
 //                            // 服务器繁忙 302
 //                            case EMError.SERVER_BUSY:
-//                                Toast.makeText(LoginActivity.this, "服务器繁忙 code: " + i + ", message:" + s, Toast.LENGTH_LONG).show();
+//                                Toast.makeText(LoginsActivity.this, "服务器繁忙 code: " + i + ", message:" + s, Toast.LENGTH_LONG).show();
 //                                break;
 //                            // 未知 Server 异常 303 一般断网会出现这个错误
 //                            case EMError.SERVER_UNKNOWN_ERROR:
-//                                Toast.makeText(LoginActivity.this, "未知的服务器异常 code: " + i + ", message:" + s, Toast.LENGTH_LONG).show();
+//                                Toast.makeText(LoginsActivity.this, "未知的服务器异常 code: " + i + ", message:" + s, Toast.LENGTH_LONG).show();
 //                                break;
 //                            default:
-//                                Toast.makeText(LoginActivity.this, "ml_sign_in_failed code: " + i + ", message:" + s, Toast.LENGTH_LONG).show();
+//                                Toast.makeText(LoginsActivity.this, "ml_sign_in_failed code: " + i + ", message:" + s, Toast.LENGTH_LONG).show();
 //                                break;
 //                        }
 //                    }
@@ -246,5 +231,5 @@
 //        });
 //    }
 //
-//
-//}
+
+}
