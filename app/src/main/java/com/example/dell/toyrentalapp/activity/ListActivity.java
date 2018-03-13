@@ -25,7 +25,12 @@ public class ListActivity extends Activity {
         findId();
         getdata();
         listview();
+        test();
     }
+
+    private void test() {
+    }
+
 
     private void listview() {
         myadapter=new ShoppingCtAdapter(friends,this);
