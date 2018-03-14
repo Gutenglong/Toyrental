@@ -25,7 +25,8 @@
             android:layout_marginLeft="69dp"
             android:textColor="#000"
             android:textSize="20dp"
-            android:text="热门玩具推荐"/>
+            android:text="热门玩具推荐"
+            android:id="@+id/tui"/>
     </LinearLayout>
     <ListView
         android:id="@+id/listh"

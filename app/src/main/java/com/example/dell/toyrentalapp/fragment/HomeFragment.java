@@ -1,16 +1,21 @@
 package com.example.dell.toyrentalapp.fragment;
 
 import android.app.Fragment;
+import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import com.example.dell.toyrentalapp.R;
+import com.example.dell.toyrentalapp.activity.GoodsActivity;
 import com.example.dell.toyrentalapp.adapter.HomeAdapter;
 import com.example.dell.toyrentalapp.bassclass.FriendHome;
 
@@ -30,6 +35,8 @@ public class HomeFragment extends Fragment {
     private List<FriendHome> friendHomes =new ArrayList<FriendHome>();
     private ListView listh;
     private HomeAdapter myadapter;
+    private ImageView img1;
+    private ImageView img2;
 
     @Nullable
     @Override
@@ -44,6 +51,7 @@ public class HomeFragment extends Fragment {
         Flipper();
         /**显示列表*/
         listview();
+        homeclick();
         return view;
     }
 
@@ -64,6 +72,9 @@ public class HomeFragment extends Fragment {
     private void GetId() {
         flipper = (ViewFlipper)view.findViewById(R.id.flipper);
         listh=(ListView)view.findViewById(R.id.listh);
+        img1=(ImageView)view.findViewById(R.id.imag1);
+         img2=(ImageView)view.findViewById(R.id.imag2);
+
     }
 
     /**
@@ -86,6 +97,23 @@ public class HomeFragment extends Fragment {
         ImageView image = new ImageView(getActivity());
         image.setBackgroundResource(resId[i]);
         return image;
+    }
+
+    private void homeclick(){
+       img1.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent intent =new Intent(getActivity(),GoodsActivity.class);
+               startActivity(intent);
+           }
+       });
+        img2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(getActivity(),ListActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }
