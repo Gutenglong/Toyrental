@@ -1,128 +1,136 @@
 package com.example.dell.toyrentalapp.activity;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
+import com.example.dell.toyrentalapp.R;
+
+import org.json.JSONObject;
+
+//import org.apache.http.Header;
 //import com.example.nianchen.normaluniversitytourgroup.page_activity.RegistActivity;
 //import com.hyphenate.EMCallBack;
-//import com.hyphenate.EMContactListener;
 //import com.hyphenate.EMError;
 //import com.hyphenate.chat.EMClient;
-//import com.loopj.android.http.AsyncHttpClient;
-//import com.loopj.android.http.AsyncHttpResponseHandler;
-//import com.loopj.android.http.JsonHttpResponseHandler;
-//import com.loopj.android.http.RequestParams;
-//import com.loopj.android.http.ResponseHandlerInterface;
-//
-//import org.apache.http.Header;
 
 public class LoginsActivity extends AppCompatActivity {
-//    private Button Btlogin;
-//    private EditText EtUname;
-//    private EditText EtPwd;
-//    private Button Btnregist;
-//    private String loginuri="http://123.207.228.232/blog/loginuser";
-//    private Handler myhandler=new Handler(){
-//        @Override
-//        public void handleMessage(Message msg) {
-//            super.handleMessage(msg);
-//            if(loginresult.equals("loginok")){
-//
-//            }
-//            else {
-//                Toast.makeText(LoginsActivity.this, "登入失败",Toast.LENGTH_LONG).show();
-//            }
-//            if(msg.what==10){
-//                Intent i = new Intent(LoginsActivity.this, MainActivity.class);
-//                startActivity(i);
-//                LoginsActivity.this.finish();
-//            }
-//        }
-//    };
-//    private String name;
-//    private String password;
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_login);
-//        Log.e("log","onCreate");
-//        findView();
-//        setListener();
-//    }
-//
-//    private void findView() {
-//        Btlogin = (Button)findViewById(R.id.btlogin);
-//        EtUname = (EditText) findViewById(R.id.Etu);
-//        EtPwd = (EditText) findViewById(R.id.Pw);
-//        Btnregist=(Button)findViewById(R.id.regist);
-//    }
-//
-//    private String loginresult;
-//    private JSONObject result;
-//    private ProgressDialog mDialog;
-//    View.OnClickListener mylistener = new View.OnClickListener() {
-//        @Override
-//        public void onClick(View v) {
-//            switch (v.getId()) {
-//                case R.id.btlogin:
-//                    mDialog = new ProgressDialog(LoginsActivity.this);
-//                    mDialog.setMessage("正在登陆，请稍后...");
-//                    mDialog.show();
+    private Button Btlogin;
+    private EditText EtUname;
+    private EditText EtPwd;
+    private Button Btnregist;
+    private String loginuri="http://123.207.228.232/blog/loginuser";
+    private Handler myhandler=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            if(loginresult.equals("loginok")){
+
+            }
+            else {
+                Toast.makeText(LoginsActivity.this, "登入失败",Toast.LENGTH_LONG).show();
+            }
+            if(msg.what==10){
+                Intent i = new Intent(LoginsActivity.this, MainActivity.class);
+                startActivity(i);
+                LoginsActivity.this.finish();
+            }
+        }
+    };
+    private String name;
+    private String password;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+        Log.e("log","onCreate");
+        findView();
+        setListener();
+    }
+
+    private void findView() {
+        Btlogin = (Button)findViewById(R.id.btlogin);
+        EtUname = (EditText) findViewById(R.id.Etu);
+        EtPwd = (EditText) findViewById(R.id.Pw);
+        Btnregist=(Button)findViewById(R.id.regist);
+    }
+
+    private String loginresult;
+    private JSONObject result;
+    private ProgressDialog mDialog;
+    View.OnClickListener mylistener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.btlogin:
+                    mDialog = new ProgressDialog(LoginsActivity.this);
+                    mDialog.setMessage("正在登陆，请稍后...");
+                    mDialog.show();
 //                    login();
 //                    loginhx();
-//                    SharedPreferences spf=getSharedPreferences("User",MODE_PRIVATE);
-//                    SharedPreferences.Editor editor=spf.edit();
-//                    editor.putString("uname",EtUname.getText().toString());
-//                    editor.clear();
-//                    editor.commit();
-//                    break;
-//                case R.id.regist:
-//                    Intent ina=new Intent(LoginsActivity.this, RegistActivity.class);
-//                    startActivity(ina);
-//                    break;
-//            }
-//        }
-//    };
-//    private void setListener() {
-//        Btlogin.setOnClickListener(mylistener);
-//        Btnregist.setOnClickListener(mylistener);
-//    }
-//
-//    @Override
-//    protected void onStop() {
-//        super.onStop();
-//        Log.e("log","onStop");
-//    }
-//
-//    @Override
-//    protected void onDestroy() {
-//        super.onDestroy();
-//        Log.e("log","onDestroy");
-//    }
-//
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//        Log.e("log","onStart");
-//    }
-//
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        Log.e("log","onResume");
-//    }
-//
-//    @Override
-//    protected void onPause() {
-//        super.onPause();
-//        Log.e("log","onPause");
-//    }
-//
-//    @Override
-//    protected void onRestart() {
-//        super.onRestart();
-//        Log.e("log","onRestart");
-//    }
+                    SharedPreferences spf=getSharedPreferences("User",MODE_PRIVATE);
+                    SharedPreferences.Editor editor=spf.edit();
+                    editor.putString("uname",EtUname.getText().toString());
+                    editor.clear();
+                    editor.commit();
+                    break;
+                case R.id.regist:
+                    Intent ina=new Intent(LoginsActivity.this, RegistActivity.class);
+                    startActivity(ina);
+                    break;
+            }
+        }
+    };
+    private void setListener() {
+        Btlogin.setOnClickListener(mylistener);
+        Btnregist.setOnClickListener(mylistener);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.e("log","onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e("log","onDestroy");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.e("log","onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e("log","onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.e("log","onPause");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.e("log","onRestart");
+    }
 //    public void login(){
 //        name=EtUname.getText().toString();
 //        password=EtPwd.getText().toString();
@@ -132,7 +140,7 @@ public class LoginsActivity extends AppCompatActivity {
 //        params.put("password",password);
 //        client.post(loginuri, params, new AsyncHttpResponseHandler() {
 //                    @Override
-//                    public void onSuccess(int i, Header[] headers, byte[] bytes) {
+//                    public void onSuccess(int i, PreferenceActivity.Header[] headers, byte[] bytes) {
 //                        byte [] mybytes=bytes;
 //                        loginresult=new String (mybytes);
 //                        Message msg=new Message();
@@ -230,6 +238,6 @@ public class LoginsActivity extends AppCompatActivity {
 //            }
 //        });
 //    }
-//
+
 
 }

@@ -1,4 +1,4 @@
-package com.example.dell.toyrentalapp;
+package com.example.dell.toyrentalapp.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
+import com.example.dell.toyrentalapp.R;
 import com.example.dell.toyrentalapp.fragment.HomeFragment;
 import com.example.dell.toyrentalapp.fragment.KindsFragment;
 import com.example.dell.toyrentalapp.fragment.MyFragment;

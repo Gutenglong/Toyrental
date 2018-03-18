@@ -9,15 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.dell.toyrentalapp.activity.ListActivity"  android:label="toyrentalapp"></activity>
-        <activity android:name=".activity.LoginsActivity"/>
-        <activity android:name=".MainActivity">
+
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.dell.toyrentalapp.activity.ListActivity"  android:label="toyrentalapp"></activity>
+        <activity android:name=".activity.LoginsActivity"/>
         <activity android:name=".activity.GoodsActivity"/>
+        <activity android:name=".activity.RegistActivity"/>
+
     </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>

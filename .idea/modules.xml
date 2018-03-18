@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Toy rental.iml" filepath="$PROJECT_DIR$/Toy rental.iml" />
       <module fileurl="file://E:\android\gongcheng\Toyrental\Toy rental.iml" filepath="E:\android\gongcheng\Toyrental\Toy rental.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Toyrental.iml" filepath="$PROJECT_DIR$/Toyrental.iml" />
+      <module fileurl="file://F:\biyesheji\Toy rental\Toyrental.iml" filepath="F:\biyesheji\Toy rental\Toyrental.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

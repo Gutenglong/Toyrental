@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.dell.toyrentalapp.MainActivity">
+    tools:context="com.example.dell.toyrentalapp.activity.MainActivity">
     <FrameLayout
         android:id="@+id/contaner"
         android:layout_width="match_parent"
